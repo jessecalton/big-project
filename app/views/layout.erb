@@ -17,6 +17,20 @@
 
   <title></title>
 </head>
+
+<%if current_user%>
+  <a href="/users/<%=@current_user.id%>"><%=@current_user.username%></a>
+  <form action='/sessions' method='post'>
+  <input type='hidden' name='_method' value='delete'>
+  <input type='submit' value='Logout'>
+  </form>
+  <a href="/movies/new">Add a Movie</a>
+
+<%else%>
+  <a href="/users/new">Register</a>
+  <a href="/sessions">Login</a>
+<%end%>
+  <a href="/users">Home</a>
 <body>
   <%= yield %>
 </body>
