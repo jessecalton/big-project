@@ -1,4 +1,5 @@
-<h2>Search a Movie</h2>
+<center>
+<h2>Add a Movie to Your Watch List</h2>
 
 <%if @errors %>
   <% @errors.each do |error| %>
@@ -6,10 +7,10 @@
   <%end%>
 <%end%>
 
-<center>
+
 <form action="/movies" method="POST">
     <input type="text" name="search" placeholder="title">
     <br><br>
-    <input type="submit" value="Search!">
+    <input type="submit" class="btn btn-success" value="Search!">
   </form>
 </center>

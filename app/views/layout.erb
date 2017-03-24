@@ -7,6 +7,9 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="bootstrap" href="/bootstrap/css/grayscale.css">
   <!--
     application.css is where you put your styles
   -->
@@ -14,12 +17,13 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  
 
   <title></title>
 </head>
-
+<div class="nav-bar">
 <%if current_user%>
-  <a href="/users/<%=current_user.id%>"><%=current_user.username%></a>
+  <a class="user-page" href="/users/<%=current_user.id%>"><%=current_user.username%></a>
   <form action='/sessions' method='post'>
   <input type='hidden' name='_method' value='delete'>
   <input type='submit' value='Logout'>
@@ -31,6 +35,7 @@
   <a href="/sessions">Login</a>
 <%end%>
   <a href="/users">Home</a>
+</div>
 <body>
   <%= yield %>
 </body>
