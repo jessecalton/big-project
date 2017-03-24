@@ -1,0 +1,24 @@
+<h1>Hello movie lover, <%=current_user.username%></h1>
+
+<h3>Your movie list:</h3>
+<%current_user.movies.each do |movie| %>
+<%=movie.title%> <br>
+<%end%>
+
+<h3>Search for a movie!</h3>
+  <form action="/users/:id" method="POST">
+    <input type="text" name="runtime" placeholder="I want the movie length to be less than...">
+    <br><br>
+    <input type="submit" value="search">
+  </form>
+
+<% if @movie_array %>
+  <% if @movie_array == [] %>
+  Your search returned no movies. Sad Panda.
+  <% else %>
+  <h3>These movies are shorter than <%=@searched_params %> minutes</h3>
+  <% @movie_array.each do |movie| %>
+  <%= movie %><br>
+  <% end %>
+<% end %>
+<% end %>

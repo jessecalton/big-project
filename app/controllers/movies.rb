@@ -18,7 +18,7 @@ post '/movies' do
     @new_movie.user_id = current_user.id
     @new_movie.save
 
-    redirect "/movies/new"
+    redirect "/users/#{current_user.id}"
   else
     @errors = ["You spelled the movie wrong"]
     erb :"/movies/new"
