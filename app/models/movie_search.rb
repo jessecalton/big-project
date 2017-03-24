@@ -9,14 +9,21 @@ class MovieSearch
     
   end
 
-  def movie_data_parse
-    ap @movie_data["Year"] ## This works!!!
+  def movie_year
+    @movie_data["Year"] ## This works!!!
     
   end
-  # def questions
-  #   self.class.get("/2.2/questions", @options)
-  # end
 
-  # def users
-  #   self.class.get("/2.2/users", @options)
+  def movie_time
+    @movie_data["Runtime"]
+  end
+
+  def response
+    @movie_data["Response"]
+  end
+
+  def movie_title
+    @movie_data["Title"]
+  end
+ 
 end
